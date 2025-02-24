@@ -1,19 +1,22 @@
 zurg: v1
-token: yourtoken
+token: 33H2L5UXZLZUFFLGZUCZBOR42XPKSC2FBW7IHEG3R3PJXZSA36CQ
 # host: "[::]"
-# port: 9999
+port: 9999
 # username:
 # password:
 # proxy:
-# concurrent_workers: 20
+concurrent_workers: 32
 check_for_changes_every_secs: 10
 # repair_every_mins: 60
 # ignore_renames: false
 # retain_rd_torrent_name: false
 # retain_folder_name_extension: false
-enable_repair: true
+expose_full_path: true
+enable_repair: True
 auto_delete_rar_torrents: true
-# api_timeout_secs: 15
+get_torrents_count: 4000
+api_timeout_secs: 60
+download_timeout_secs: 15
 # download_timeout_secs: 10
 # enable_download_mount: false
 # rate_limit_sleep_secs: 6
