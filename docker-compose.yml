@@ -31,7 +31,11 @@ rclone:
       - /dev/fuse:/dev/fuse:rwm
     depends_on:
       - zurg
-    command: "mount zurg: /data --allow-other --allow-non-empty --dir-cache-time 10s --vfs-cache-mode full"
-
- volumes:
-  zurgdata:
+        command: "mount zurghttp: /data --allow-non-empty --allow-other --uid=1000
+      --gid=1000 --cache-dir /mnt/cache --vfs-cache-mode full
+      --vfs-cache-max-age 24h --vfs-cache-max-size 50G --async-read
+      --vfs-read-ahead 128M --vfs-read-chunk-size 64M
+      --vfs-read-chunk-size-limit 2G --use-mmap --buffer-size=64M
+      --dir-cache-time 10s"
+volumes:
+  zurgdata: null
