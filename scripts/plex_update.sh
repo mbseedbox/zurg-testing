@@ -7,8 +7,8 @@
 # docker compose exec zurg apk add libxml2-utils
 # sudo apt install libxml2-utils
 
-plex_url="http://<url>" # If you're using zurg inside a Docker container, by default it is 172.17.0.1:32400
-token="<token>" # open Plex in a browser, open dev console and copy-paste this: window.localStorage.getItem("myPlexAccessToken")
+plex_url="http://172.17.0.1:32400" # If you're using zurg inside a Docker container, by default it is 172.17.0.1:32400
+token="JaT2rvrxpr2fbzpN56xs" # open Plex in a browser, open dev console and copy-paste this: window.localStorage.getItem("myPlexAccessToken")
 zurg_mount="/mnt/zurg" # replace with your zurg mount path, ensure this is what Plex sees
 
 # Get the list of section IDs
