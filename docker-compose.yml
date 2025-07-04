@@ -12,7 +12,7 @@ services:
       - ./config.yml:/app/config.yml
       - zurgdata:/app/data
 
-rclone:
+  rclone:
     image: rclone/rclone:latest
     container_name: rclone
     restart: unless-stopped
