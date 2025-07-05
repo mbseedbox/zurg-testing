@@ -34,4 +34,4 @@ services:
     command: "mount zurg: /data --allow-other --dir-cache-time 10s --vfs-cache-mode full --vfs-cache-max-size 30g --vfs-read-wait 0s --vfs-read-chunk-size 4M --vfs-read-chunk-size-limit 500M --no-checksum  --no-modtime --read-only --vfs-read-wait 0s --vfs-read-ahead 30g --allow-non-empty --dir-cache-time 50h --cache-info-age 100h"
 
 volumes:
-  zurg_data: null
+  zurg_data: 
