@@ -10,7 +10,7 @@ services:
     volumes:
       - ./scripts/plex_update.sh:/app/plex_update.sh
       - ./config.yml:/app/config.yml
-      - zurg_data:/app/data
+      - data:/app/data
 
   rclone:
     image: rclone/rclone:latest
@@ -21,7 +21,7 @@ services:
       PUID: 1000
       PGID: 1000
     volumes:
-      - /mnt/zurg:/data:rshared # CHANGE /mnt/zurg WITH YOUR PREFERRED MOUNT PATH
+      - /mnt/media:/data:rshared # CHANGE /mnt/zurg WITH YOUR PREFERRED MOUNT PATH
       - ./rclone.conf:/config/rclone/rclone.conf
     cap_add:
       - SYS_ADMIN
@@ -34,4 +34,4 @@ services:
     command: "mount zurg: /data --allow-other --dir-cache-time 10s --vfs-cache-mode full --vfs-cache-max-size 30g --vfs-read-wait 0s --vfs-read-chunk-size 4M --vfs-read-chunk-size-limit 500M --no-checksum  --no-modtime --read-only --vfs-read-wait 0s --vfs-read-ahead 30g --allow-non-empty --dir-cache-time 50h --cache-info-age 100h"
 
 volumes:
-  zurg_data: 
+  data: 
