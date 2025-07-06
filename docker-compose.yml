@@ -10,7 +10,7 @@ services:
     volumes:
       - ./scripts/plex_update.sh:/app/plex_update.sh
       - ./config.yml:/app/config.yml
-      - data:/app/data
+      - DATA:/app/data
 
   rclone:
     image: rclone/rclone:latest
@@ -34,4 +34,4 @@ services:
     command: "mount zurg: /data --allow-other --dir-cache-time 10s --vfs-cache-mode full --vfs-cache-max-size 30g --vfs-read-wait 0s --vfs-read-chunk-size 4M --vfs-read-chunk-size-limit 500M --no-checksum  --no-modtime --read-only --vfs-read-wait 0s --vfs-read-ahead 30g --allow-non-empty --dir-cache-time 50h --cache-info-age 100h"
 
 volumes:
-  data: 
+  DATA: 
